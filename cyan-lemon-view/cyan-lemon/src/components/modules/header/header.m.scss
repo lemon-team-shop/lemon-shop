@@ -1,0 +1,41 @@
+div{
+    height:100%;
+}
+.cyan-lemon-header{
+    height: 4rem;
+    background: #d5222f;
+    display:flex;
+    justify-content: center;
+    .cyan-lemon-header-center{
+        width:80%;
+        height:100%;
+        display:flex;
+        .lemon-header-center-logo{
+            flex:1;
+            .logo{
+                margin-top:1rem;
+                line-height:2rem;
+            }
+        }
+        .lemon-header-center-search{
+            flex:1;
+            /deep/.ant-input{
+                height:2rem;
+                width:70%;
+                margin-top:1rem;
+            }
+        }
+        .lemon-header-center-login{
+            flex:1;
+            display:flex;
+            justify-content: flex-end;
+
+            /deep/ .ant-btn-primary{
+                margin-top:1rem;
+                margin-right:1rem;
+            }
+        }
+        
+    }
+}
+

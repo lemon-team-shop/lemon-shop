@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+*{
+  margin:0;
+  padding: 0;
+}
+html,body,#root{
+  height: 100%;
+}
+.App{
+  height:100%;
+  display:flex;
+  flex-direction: column;
+}
+.cyan-lemon-header{
+  height: 4rem;
+  background: #d5222f;
+}
+.cyan-lemon-main-body{
+  flex:1;
+  background:#fff;
+}
+.cyan-lemon-login{
+    padding:4rem;
+    display:flex;
+    justify-content: center;
+}
+a{
+  color:#111;
+}

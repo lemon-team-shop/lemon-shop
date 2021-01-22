@@ -1,0 +1,53 @@
+.cyan-lemon-login-page{
+    display:flex;
+    flex-direction: column;
+    padding:50px;
+    height:400px;
+    width:500px;
+    border-radius: 3px;
+    background:rgb(231, 231, 219);
+    .lemon-login-username{
+        width:80%;
+        margin:1rem auto;
+        display:flex;
+        height:2.5rem;
+        position:relative;
+        p{
+            width:30%;
+            line-height:2.5rem;
+            text-align:right;
+            padding-right:1rem;
+        }
+        .login-registor{
+            width:50%;
+            margin:0 auto;
+            display:flex;
+            justify-content: space-between;
+        }
+    }
+    .login-forget{
+        color:#096dd9;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.hidden{
+    position:absolute;
+    width:200px;
+    height:1.8rem;
+    bottom:-1.8rem;
+    line-height:1.8rem;
+    color:#D2225f;
+    left:4.8rem;
+    display:none;
+}
+.visible{
+    position:absolute;
+    width:200px;
+    height:1.8rem;
+    bottom:-1.8rem;
+    line-height:1.8rem;
+    color:#D2225f;
+    left:4.8rem;
+    display:block;
+}
