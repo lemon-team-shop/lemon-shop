@@ -2,7 +2,7 @@
 import './App.css';
 import Header from './components/modules/header'
 // import Footer from './components/modules/footer'
-import Main from './components/modules/mainbody'
+import Main from './components/modules/router'
 
 function App() {
   return (

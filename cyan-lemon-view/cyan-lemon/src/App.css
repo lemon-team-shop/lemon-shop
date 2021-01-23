@@ -55,6 +55,8 @@ html,body,#root{
 .cyan-lemon-main-body{
   flex:1;
   background:#fff;
+  display: flex;
+  flex-direction: column;
 }
 .cyan-lemon-login{
     padding:4rem;

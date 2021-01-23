@@ -29,11 +29,34 @@ div{
             flex:1;
             display:flex;
             justify-content: flex-end;
-
             /deep/ .ant-btn-primary{
                 margin-top:1rem;
                 margin-right:1rem;
             }
+            .header-button-photo{
+                display:flex;
+                .headPhoto{
+                    display:flex;
+                    height:4rem;
+                    width:4rem;
+                    border-radius:4rem;
+                    background:#fff;
+                    position:relative;
+                    img{
+                        height:100%;
+                        width:100%;
+                        display:block;
+                        padding:0.5rem;
+                        position:absolute;
+                        top:0;
+                        right:0;
+                        bottom:0;
+                        left:0;
+                        margin:auto;
+                    }
+                }
+            }
+            
         }
         
     }

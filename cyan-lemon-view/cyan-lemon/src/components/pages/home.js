@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
-import { Menu } from 'antd';
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons'; // 引入图标
-
+import Nav from '../modules/home/nav'
+import MenuOfHome from '../modules/home/menu'
+import '../modules/home/home.m.scss'
 class Home extends Component{
     state = {
         current: 'mail',
     };
     render() {
-        const { current } = this.state;
         return (<>
-            <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
-                <Menu.Item key="mail">
-                    苹果
-                </Menu.Item>
-                <Menu.Item key="app">
-                    香蕉
-                </Menu.Item>
-                <Menu.Item key="alipay">
-                    水蜜桃
-                </Menu.Item>
-            </Menu>
+            <div style={{height: '48px'}}>
+                <Nav/>
+            </div>
+            <div style={{flex: 1, overflow: 'auto'}}>
+                <MenuOfHome/>
+            </div>
         </>)
     }
-    handleClick = e => {
-        console.log('click ', e);
-        this.setState({ current: e.key });
-    };
+
 }
 export default Home
