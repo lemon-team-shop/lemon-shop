@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
-
+import ProcuctDetail from '../../pages/productDetail'
 import Home from '../../pages/home'
 import Login from '../../pages/login'
 class Main extends Component{
@@ -9,6 +9,7 @@ class Main extends Component{
             <Switch>
                 <Route exact path='/' component={Home}></Route>
                 <Route exact path='/login' component={Login}></Route>
+                <Route path='/detail' component={ProcuctDetail}></Route>
             </Switch>
         </div>)
     }

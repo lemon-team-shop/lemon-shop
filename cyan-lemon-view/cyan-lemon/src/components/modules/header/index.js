@@ -4,6 +4,7 @@ import {Input, Button} from 'antd'
 import {NavLink} from 'react-router-dom'
 import headPhoto from '../svg/head_photo.svg'
 import axios from 'axios'
+import store from '../store/store'
 class Header extends Component{
     constructor() {
         super() 
@@ -13,8 +14,15 @@ class Header extends Component{
         }
     }
     onSearch = () => {
-        axios.post('http://localhost:3000/search', {product: this.state.searchValue}).then((res) => {
-            console.log(res)
+        axios.post('http://localhost:3000/fuzzySearch',
+        {   
+            productName: this.state.searchValue,
+            productCode: '',
+            price: ''
+        }).then((res) => {
+            if (res.status === 200) {
+                store.dispatch({type: 'SEARCH', payload: res.data})
+            }
         })
     }
     changValue = (e) => {

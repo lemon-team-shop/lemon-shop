@@ -39,7 +39,11 @@ class Login extends Component{
             })
     }
     registor = () => {
-        axios.post('http://localhost:3000/registor',{username: this.state.username, password: this.state.password}).then((res) => {
+        axios.post('http://localhost:3000/registor',
+        { 
+            username: this.state.username, 
+            password: this.state.password
+        }).then((res) => {
             console.log(res)
         })
     }
