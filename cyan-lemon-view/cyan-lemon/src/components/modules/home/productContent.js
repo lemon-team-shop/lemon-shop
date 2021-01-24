@@ -3,9 +3,10 @@ import { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import store from  '../store/store'
 import phone from '../svg/phone.jpeg'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 console.log(store.getState())
-class ProductContent extends Component{
+
+export default connect(state => ({num: state}))(class ProductContent extends Component{
     constructor() {
         super()
         this.state = {
@@ -34,6 +35,8 @@ class ProductContent extends Component{
         
     }
     render () {
+        const {num} = this.props
+        console.log('99999999999999999999', num)
         return (<>
             <div className="product-content">
                 {this.state.productList.map((item, ind) => {
@@ -53,5 +56,5 @@ class ProductContent extends Component{
             </div>
         </>)
     }
-}
-export default ProductContent
+})
+// export default connect(state => ({num: state}))(ProductContent)

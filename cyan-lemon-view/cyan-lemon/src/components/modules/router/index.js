@@ -11,7 +11,7 @@ class Main extends Component{
                 <Route exact path='/' component={Home}></Route>
                 <Route exact path='/login' component={Login}></Route>
                 <Route path='/detail' component={ProcuctDetail}></Route>
-                <Route path='/404' component={FourZeroFour}></Route>
+                <Route component={FourZeroFour}></Route>
             </Switch>
         </div>)
     }
