@@ -50,7 +50,10 @@ class Header extends Component{
                     </NavLink>
                     <div className="header-button-photo">
                         <div className="headPhoto">
-                            <img src={headPhoto} alt="头像"/>
+                            <img src={headPhoto} alt="头像" className="imgOne"/>
+                            <img src={headPhoto} alt="头像" className="imgTwo"/>
+                            <img src={headPhoto} alt="头像" className="imgThree"/>
+                            <img src={headPhoto} alt="头像" className="imgFour"/>
                         </div>
                     </div>
                 </div>

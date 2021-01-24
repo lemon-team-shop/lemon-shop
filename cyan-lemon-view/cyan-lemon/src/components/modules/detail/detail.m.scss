@@ -7,6 +7,8 @@
     .lemon-scale-photo{
         height:30rem;
         width:30rem;
-        background:cyan;
+        img{
+            width:100%;
+        }
     }
 }

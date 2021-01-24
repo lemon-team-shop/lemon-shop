@@ -41,11 +41,11 @@ div{
                     height:4rem;
                     width:4rem;
                     border-radius:4rem;
-                    background:#fff;
+                    // background:#fff;
                     position:relative;
                     img{
-                        height:100%;
-                        width:100%;
+                        width: 3.6rem;
+                        height: 3.6rem;
                         display:block;
                         padding:0.5rem;
                         position:absolute;
@@ -54,6 +54,7 @@ div{
                         bottom:0;
                         left:0;
                         margin:auto;
+                        border-radius:4rem;
                     }
                 }
             }
@@ -62,4 +63,40 @@ div{
         
     }
 }
+.headPhoto{
+    width:100%;
+    height:100%;
+    /* position:relative; */
+    /* background:red; */
+    /* animation:mymove 5s infinite; */
+    animation:haha1 30s linear infinite;
+    /* perspective: 600px; */
+    transform-style:preserve-3d;
+}
+
+.imgOne{
+    transform:translateX(50%)  rotateY(-90deg);
+}
+.imgTwo{
+    transform:translateX(-50%)  rotateY(90deg);
+}
+.imgThree{
+    transform:translateZ(2rem);
+}
+.imgFour{
+    transform:translateZ(-2rem);
+}
+.imgFive{
+    transform:translateY(50%) rotateX(90deg);
+}
+.imgSix{
+    transform:translateY(-50%) rotateX(-90deg);
+}
+@keyframes haha1{ 
+    from {
+        transform:rotateY(0);
+    } to { 
+        transform:rotateY(360deg);
+    } 
+} 
 
