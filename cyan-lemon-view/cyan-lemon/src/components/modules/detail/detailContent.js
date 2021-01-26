@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
+// import axios from 'axios'
 export function DetailContent(props) {
     const [date, setDate] = useState(new Date())
     useEffect(() => { // componentDidMount \componentDidUpdate\ componentWillUnmount的集合
+        
         const timer = setInterval(() => {
             setDate(new Date())
         }, 1000);

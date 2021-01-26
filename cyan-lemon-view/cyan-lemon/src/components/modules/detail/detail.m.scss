@@ -6,9 +6,12 @@
     padding:1rem;
     .lemon-scale-photo{
         height:30rem;
-        width:30rem;
+        width:100%;
+        .product-photo{
+            // display:flex;
+        }
         img{
-            width:100%;
+            width:30rem;
         }
     }
 }
