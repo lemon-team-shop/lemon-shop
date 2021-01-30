@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import '../modules/detail/detail.m.scss'
 import phone from '../modules/svg/phone.jpeg'
-import {DetailContent} from '../modules/detail/detailContent'
+import UploadFile from '../modules/detail/detailContent'
 import axios from 'axios'
 class ProcuctDetail extends Component{
     constructor() {
@@ -29,12 +29,12 @@ class ProcuctDetail extends Component{
                         <img src={phone} alt=""></img>
                         {this.state.productDetail.map((item, ind) => {
                             return (<div style={{flex: 1}} key={ind}>
-                                <div>{item.productName} {item.price}</div>
+                                <div>{item.productName} {item.price}￥</div>
                             </div>)
                         })}
                     </div>
                     
-                    <DetailContent/>
+                    <UploadFile/>
                 </div>
                 </div>
                 <div></div>

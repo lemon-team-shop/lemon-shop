@@ -7,6 +7,7 @@ import axios from 'axios'
 import store from '../store/store'
 class Header extends Component{
     constructor() {
+        
         super() 
         this.state= {
             isLogin: false,
