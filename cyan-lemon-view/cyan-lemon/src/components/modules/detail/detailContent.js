@@ -1,7 +1,8 @@
 import React from 'react';
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import axios from 'axios';
+
+import { upload } from '../api/upload';
 class UploadFile extends React.Component{
     constructor() {
         super()
@@ -32,15 +33,12 @@ class UploadFile extends React.Component{
       console.log(0)
       console.log(this.state.fileList)
       const cbform = new FormData();
-      cbform.append('file', this.state.fileList[0])
-      axios.request({
-        url: 'http://localhost:3000/upload',
-        method: 'post',
-        data: cbform,
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+      console.log('///////////////?????', this.state.fileList)
+      this.state.fileList.forEach((item) => {
+        cbform.append('file', item)
+        console.log(cbform)
       })
+      upload(cbform)
     }
     render() {
         return (<div>

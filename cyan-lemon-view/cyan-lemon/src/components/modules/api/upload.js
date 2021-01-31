@@ -1,8 +1,14 @@
-import axios from 'axios'
-const request = axios.request
-export function uplaodPhoto(data) {
+import request from '../../../utils/request'
+export function login(data) {
     return request({
-        url: 'http://localhost:3000/upload',
+        url: '/login',
+        method: 'post',
+        data,
+    })
+}
+export function upload(data) {
+    return request({
+        url: '/upload',
         method: 'post',
         headers: {'Content-Type': 'multipart/form-data'},
         data,

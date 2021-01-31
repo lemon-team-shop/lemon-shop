@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../modules/login/login.m.scss'
 import {Input, Button} from 'antd'
 import axios from 'axios'
-
+import sha1 from 'js-sha1';
+import { login } from '../modules/api/upload'
 class Login extends Component{
     constructor (props) {
         super(props)
@@ -13,36 +14,34 @@ class Login extends Component{
         }
     }
     login = () => {
-        console.log(this.state)
-        axios.post('http://localhost:3000/login',
-            {   
-                username: this.state.username,
-                password: this.state.password
-            })
-            .then((res) => {
-                if (res.status === 200) {
-                    console.log(res.message)
-                    console.log(res.message === '登录成功')
-                    if (res.data.message === '登录成功') {
-                        this.setState({
-                            hidden: 'hidden'
-                        })
-                        this.props.history.push('/')
-                    } else {
-                        this.props.history.push('/login')
-                        this.setState({
-                            hidden: 'visible'
-                        })
-                    }
+        const param = {   
+            username: this.state.username,
+            password: sha1(this.state.password)
+        }
+        login(param).then((res) => {
+            if (res.status === "200") {
+                console.log(res.message)
+                console.log(res.message === '登录成功')
+                if (res.message === '登录成功') {
+                    this.setState({
+                        hidden: 'hidden'
+                    })
+                    this.props.history.push('/')
+                } else {
+                    this.props.history.push('/login')
+                    this.setState({
+                        hidden: 'visible'
+                    })
                 }
-            console.log(res)
-            })
+            }
+        console.log(res)
+        })
     }
     registor = () => {
         axios.post('http://localhost:3000/registor',
         { 
             username: this.state.username, 
-            password: this.state.password
+            password: sha1(this.state.password)
         }).then((res) => {
             console.log(res)
         })
