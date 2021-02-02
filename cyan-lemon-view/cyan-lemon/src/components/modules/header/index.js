@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './header.m.scss'
 import {Input, Button} from 'antd'
 import {NavLink} from 'react-router-dom'
-import headPhoto from '../svg/head_photo.svg'
-import axios from 'axios'
-import store from '../store/store'
+import headPhoto from '@/components/modules/svg/head_photo.svg'
+import store from '@/components/modules/store/store'
+import { fuzzySearch } from '@/components/modules/api/upload'
 class Header extends Component{
     constructor() {
         
@@ -15,12 +15,12 @@ class Header extends Component{
         }
     }
     onSearch = () => {
-        axios.post('http://localhost:3000/fuzzySearch',
-        {   
+        const param = {   
             productName: this.state.searchValue,
             productCode: '',
             price: ''
-        }).then((res) => {
+        }
+        fuzzySearch(param).then((res) => {
             if (res.status === 200) {
                 store.dispatch({type: 'SEARCH', payload: res.data})
             }

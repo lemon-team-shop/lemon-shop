@@ -1,8 +1,8 @@
 import { Component } from 'react'
-import '../modules/detail/detail.m.scss'
-import phone from '../modules/svg/phone.jpeg'
+import '@/components/modules/detail/detail.m.scss'
+import phone from '@/components/modules/svg/phone.jpeg'
 import UploadFile from '../modules/detail/detailContent'
-import axios from 'axios'
+import { product } from '@/components/modules/api/upload.js'
 class ProcuctDetail extends Component{
     constructor() {
         super()
@@ -11,8 +11,7 @@ class ProcuctDetail extends Component{
         }
     }
     componentDidMount() {
-        axios.post('http://localhost:3000/product', {productCode: 'A0001001'}).then((res) => {
-            console.log(res)
+        product({productCode: 'A0001001'}).then((res) => {
             if (res.status === 200) {
                 this.setState({
                     productDetail: res.data

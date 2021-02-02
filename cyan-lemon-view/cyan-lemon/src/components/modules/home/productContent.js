@@ -1,9 +1,10 @@
-import axios from 'axios'
+
 import { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import store from  '../store/store'
-import phone from '../svg/phone.jpeg'
+import store from  '@/components/modules/store/store'
+import phone from '@/components/modules/svg/phone.jpeg'
 import { connect } from 'react-redux'
+import { search } from '@/components/modules/api/upload'
 console.log(store.getState())
 
 export default connect(state => ({num: state}))(class ProductContent extends Component{
@@ -13,9 +14,9 @@ export default connect(state => ({num: state}))(class ProductContent extends Com
             productList: store.getState().product
         }
     }
-     search = async () => {
-         await axios.post('http://localhost:3000/search', {}).then((res) => {
-            if (res.status === 200) {
+     searchList = async () => {
+         await search({}).then((res) => {
+            if (res.status === "200") {
                 store.dispatch({type: 'SEARCH', payload: res.data})
                 this.setState({
                     productList: store.getState().product
@@ -25,7 +26,7 @@ export default connect(state => ({num: state}))(class ProductContent extends Com
         
     }
     componentDidMount() {
-        this.search()
+        this.searchList()
         store.subscribe(() => { // state变化时监听
             this.forceUpdate() //强制刷新
             this.setState({

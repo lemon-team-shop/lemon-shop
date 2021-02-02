@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../modules/login/login.m.scss'
+import '@/components/modules/login/login.m.scss'
 import {Input, Button} from 'antd'
 import axios from 'axios'
 import sha1 from 'js-sha1';
-import { login } from '../modules/api/upload'
+import { login } from '@/components/modules/api/upload'
 class Login extends Component{
     constructor (props) {
         super(props)

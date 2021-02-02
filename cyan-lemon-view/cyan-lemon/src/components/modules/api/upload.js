@@ -14,3 +14,24 @@ export function upload(data) {
         data,
     })
 }
+export function product(data) {
+    return request({
+        url: '/product',
+        method: 'post',
+        data,
+    })
+}
+export function search(data) {
+    return request({
+        url: '/search',
+        method: 'post',
+        data,
+    })
+}
+export function fuzzySearch(data) {
+    return request({
+        url: '/fuzzySearch',
+        method: 'post',
+        data,
+    })
+}

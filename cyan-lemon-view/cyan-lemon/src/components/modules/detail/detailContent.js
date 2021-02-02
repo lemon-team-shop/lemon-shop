@@ -2,7 +2,7 @@ import React from 'react';
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
-import { upload } from '../api/upload';
+import { upload } from '@/components/modules/api/upload';
 class UploadFile extends React.Component{
     constructor() {
         super()
@@ -32,10 +32,9 @@ class UploadFile extends React.Component{
     uploadFile = () => {
       console.log(0)
       console.log(this.state.fileList)
-      const cbform = new FormData();
-      console.log('///////////////?????', this.state.fileList)
+      const cbform = new FormData()
       this.state.fileList.forEach((item) => {
-        cbform.append('file', item)
+        cbform.append('file', item.originFileObj)
         console.log(cbform)
       })
       upload(cbform)
