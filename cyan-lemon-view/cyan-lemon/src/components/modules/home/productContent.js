@@ -6,6 +6,7 @@ import phone from '@/components/modules/svg/phone.jpeg'
 import { connect } from 'react-redux'
 import { search } from '@/components/modules/api/upload'
 console.log(store.getState())
+console.log(0)
 
 export default connect(state => ({num: state}))(class ProductContent extends Component{
     constructor() {
